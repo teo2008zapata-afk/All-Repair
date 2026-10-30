@@ -1,0 +1,35 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+{% block title %}Repuestos | All-Repair{% endblock %}
+{% block nav_repuestos %}active{% endblock %}
+{% block page_heading %}Repuestos{% endblock %}
+{% block page_description %}Administra el inventario de repuestos de All-Repair.{% endblock %}
+
+{% block content %}
+<section class="admin-section-card">
+    <div class="admin-section-heading">
+        <div><span class="admin-section-kicker">INVENTARIO</span><h2>Lista de repuestos</h2></div>
+        <a href="{% url 'repuesto_crear' %}" class="admin-gradient-button"><i class="bi bi-plus-lg"></i> Nuevo repuesto</a>
+    </div>
+
+    <div class="admin-card-grid">
+        {% for repuesto in repuestos %}
+        <article class="admin-data-card">
+            <div class="data-card-icon"><i class="bi bi-box-seam"></i></div>
+            <h3>{{ repuesto.nombre }}</h3>
+            <p>{{ repuesto.descripcion }}</p>
+            <div class="data-card-meta">
+                <span><small>Precio</small><strong>${{ repuesto.precio }}</strong></span>
+                <span><small>Stock</small><strong>{{ repuesto.stock }}</strong></span>
+            </div>
+            <div class="data-card-actions">
+                <a href="{% url 'repuesto_detalle' repuesto.id %}"><i class="bi bi-eye"></i> Ver</a>
+                <a href="{% url 'repuesto_editar' repuesto.id %}"><i class="bi bi-pencil"></i> Editar</a>
+                <a href="{% url 'repuesto_eliminar' repuesto.id %}" class="danger"><i class="bi bi-trash3"></i> Eliminar</a>
+            </div>
+        </article>
+        {% empty %}
+        <div class="admin-empty-state"><i class="bi bi-box-seam"></i><h3>No hay repuestos registrados</h3><p>Comienza agregando el primer repuesto al inventario.</p><a href="{% url 'repuesto_crear' %}" class="admin-gradient-button">Agregar repuesto</a></div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

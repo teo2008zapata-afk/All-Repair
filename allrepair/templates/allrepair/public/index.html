@@ -1,0 +1,351 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+        <link href="{% static 'allrepair/css/estilos.css' %}" rel="stylesheet"/>
+        <link href="{% static 'allrepair/img/All-Repair-logo.ico' %}" rel="icon"/>
+        <title>
+            Reparaci&oacute;n y mantenimiento tecnol&oacute;gico - All-Repair
+        </title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3">
+                <div class="container">
+                    <a class="navbar-brand fw-bold d-flex align-items-center" href="{% url 'inicio' %}">
+                        <img alt="Logo de All-Repair" class="brand-logo" src="{% static 'allrepair/img/All-Repair-Banner.png' %}"/>
+                    </a>
+                    <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'inicio' %}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nosotros' %}">
+                                    Qui&eacute;nes Somos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'catalogo' %}">
+                                    Repuestos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'servicios' %}">
+                                    Servicios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'blog' %}">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contactanos' %}">
+                                    Cont&aacute;ctanos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container my-5">
+            <div class="alert alert-info text-center mb-4">
+                <strong>
+                    Diagn&oacute;stico inicial:
+                </strong>
+                revisamos tu equipo y te explicamos la soluci&oacute;n antes de reparar.
+                <span class="badge bg-primary ms-2">
+                    Transparencia
+                </span>
+            </div>
+            <section class="hero-repair mb-5 shadow-sm">
+                <div class="hero-content h-100 d-flex align-items-center">
+                    <div class="p-4 p-md-5 text-white" style="max-width:720px">
+                        <span class="badge bg-light text-primary mb-3">
+                            SERVICIO T&Eacute;CNICO
+                        </span>
+                        <h1 class="display-4 fw-bold">
+                            Tu equipo en buenas manos.
+                        </h1>
+                        <p class="lead mb-4">
+                            En
+                            <strong>
+                                All-Repair
+                            </strong>
+                            reparamos celulares, computadores y dispositivos tecnol&oacute;gicos con procesos claros, atenci&oacute;n personalizada y soluciones confiables.
+                        </p>
+                        <a class="btn btn-light btn-lg me-2" href="{% url 'servicios' %}">
+                            Ver servicios
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="{% url 'contactanos' %}">
+                            Solicitar diagn&oacute;stico
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="text-center mb-5">
+                <article class="card card-custom p-4 p-md-5">
+                    <h2 class="display-6 fw-bold mb-3">
+                        BIENVENIDO A ALL-REPAIR
+                    </h2>
+                    <h3 class="h5 text-muted mb-4">
+                        Reparaci&oacute;n, mantenimiento y soporte tecnol&oacute;gico
+                    </h3>
+                    <p class="lead mx-auto text-secondary" style="max-width:820px">
+                        Convertimos problemas t&eacute;cnicos en soluciones sencillas. Nuestro objetivo es que conozcas qu&eacute; tiene tu equipo, cu&aacute;nto cuesta repararlo y qu&eacute; opciones tienes antes de tomar una decisi&oacute;n.
+                    </p>
+                </article>
+            </section>
+            <section class="mb-5">
+                <h3 class="text-center fw-bold mb-4">
+                    &iquest;Por qu&eacute; elegirnos?
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card card-custom card-hover h-100 p-4 text-center">
+                            <div class="icon-box mx-auto mb-3">
+                                <i class="bi bi-search service-icon">
+                                </i>
+                            </div>
+                            <h4 class="h5 fw-bold">
+                                Diagn&oacute;stico claro
+                            </h4>
+                            <p class="text-secondary">
+                                Identificamos la falla y explicamos el procedimiento de forma sencilla.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-custom card-hover h-100 p-4 text-center">
+                            <div class="icon-box mx-auto mb-3">
+                                <i class="bi bi-tools service-icon">
+                                </i>
+                            </div>
+                            <h4 class="h5 fw-bold">
+                                Trabajo cuidadoso
+                            </h4>
+                            <p class="text-secondary">
+                                Aplicamos procesos organizados para proteger tus componentes y tu informaci&oacute;n.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-custom card-hover h-100 p-4 text-center">
+                            <div class="icon-box mx-auto mb-3">
+                                <i class="bi bi-shield-check service-icon">
+                                </i>
+                            </div>
+                            <h4 class="h5 fw-bold">
+                                Confianza
+                            </h4>
+                            <p class="text-secondary">
+                                Te mantenemos informado sobre el estado de tu servicio y sus costos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-5">
+                <div class="card card-custom p-4">
+                    <h3 class="text-center fw-bold mb-4">
+                        Nuestro proceso
+                    </h3>
+                    <ol class="list-group list-group-numbered list-group-flush">
+                        <li class="list-group-item bg-transparent">
+                            <strong>
+                                Recepci&oacute;n:
+                            </strong>
+                            registramos el equipo y el motivo de la visita.
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <strong>
+                                Diagn&oacute;stico:
+                            </strong>
+                            revisamos el funcionamiento y detectamos la causa.
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <strong>
+                                Presupuesto:
+                            </strong>
+                            presentamos la soluci&oacute;n y el valor antes de intervenir.
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <strong>
+                                Reparaci&oacute;n:
+                            </strong>
+                            realizamos el trabajo acordado.
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <strong>
+                                Entrega:
+                            </strong>
+                            verificamos el equipo y explicamos el resultado.
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+        <footer class="navbar-custom text-light pt-5 pb-3 mt-auto">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <img alt="Logo de All-Repair" class="footer-logo" src="{% static 'allrepair/img/All-Repair-logo.png' %}"/>
+                            <div>
+                                <span class="h4 fw-bold mb-0 text-white d-block">
+                                    ALL-REPAIR
+                                </span>
+                                <small class="text-uppercase opacity-75">
+                                    Servicio t&eacute;cnico
+                                </small>
+                            </div>
+                        </div>
+                        <p class="small opacity-75">
+                            Reparamos tus equipos con diagn&oacute;stico transparente, repuestos de calidad y atenci&oacute;n cercana.
+                        </p>
+                        <p class="fw-bold small mb-2 text-white">
+                            S&iacute;guenos
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a aria-label="Facebook" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.facebook.com/" target="_blank">
+                                <i class="bi bi-facebook">
+                                </i>
+                            </a>
+                            <a aria-label="Instagram" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.instagram.com/" target="_blank">
+                                <i class="bi bi-instagram">
+                                </i>
+                            </a>
+                            <a aria-label="TikTok" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.tiktok.com/" target="_blank">
+                                <i class="bi bi-tiktok">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Servicios
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Reparaci&oacute;n de pantalla
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Cambio de bater&iacute;a
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Mantenimiento preventivo
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Diagn&oacute;stico t&eacute;cnico
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Navegaci&oacute;n
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'inicio' %}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'nosotros' %}">
+                                    Qui&eacute;nes Somos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'catalogo' %}">
+                                    Repuestos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'blog' %}">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'contactanos' %}">
+                                    Cont&aacute;ctanos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Atenci&oacute;n
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-3">
+                                <i class="bi bi-clock me-2">
+                                </i>
+                                <strong>
+                                    Horario
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    Lun - S&aacute;b &middot; 8:00 a.m. - 6:00 p.m.
+                                </span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-headset me-2">
+                                </i>
+                                <strong>
+                                    Soporte t&eacute;cnico
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    Asesor&iacute;a antes y despu&eacute;s del servicio.
+                                </span>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope me-2">
+                                </i>
+                                <strong>
+                                    Correo
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    contacto@all-repair.com
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="border-light opacity-25 my-4"/>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small opacity-75 gap-2">
+                    <a href="{% url 'login' %}">
+                        <p class="mb-0">&copy; 2026 All-Repair. Todos los derechos reservados.</p>
+                    </a>                            
+                    <p class="mb-0">
+                        Tecnolog&iacute;a reparada, confianza recuperada.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
+</html>

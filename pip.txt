@@ -1,0 +1,1 @@
+pip install django psycopg[binary] dj-database-url python-dotenv

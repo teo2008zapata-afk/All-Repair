@@ -1,0 +1,16 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+{% block title %}Detalle de servicio | All-Repair{% endblock %}
+{% block nav_servicios %}active{% endblock %}
+{% block page_heading %}Detalle del servicio{% endblock %}
+{% block page_description %}Consulta la información registrada del servicio técnico.{% endblock %}
+
+{% block content %}
+<section class="admin-detail-card">
+    <div class="admin-detail-header"><div class="form-heading-icon service"><i class="bi bi-tools"></i></div><div><span class="admin-section-kicker">SERVICIO #{{ Servicio.id }}</span><h2>{{ Servicio.nombre }}</h2></div></div>
+    <div class="admin-detail-grid">
+        <div><span>Descripción</span><p>{{ Servicio.descripcion }}</p></div>
+        <div><span>Precio</span><p class="detail-highlight">${{ Servicio.precio }}</p></div>
+    </div>
+    <div class="admin-form-actions"><a href="{% url 'servicio_lista' %}" class="admin-secondary-button">← Volver al listado</a><a href="{% url 'servicio_editar' Servicio.id %}" class="admin-gradient-button"><i class="bi bi-pencil"></i> Editar</a></div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+{% block title %}{% if Repuesto %}Editar repuesto{% else %}Nuevo repuesto{% endif %} | All-Repair{% endblock %}
+{% block nav_repuestos %}active{% endblock %}
+{% block page_heading %}{% if Repuesto %}Editar repuesto{% else %}Nuevo repuesto{% endif %}{% endblock %}
+{% block page_description %}Completa la información del repuesto para mantener actualizado el inventario.{% endblock %}
+
+{% block content %}
+<section class="admin-form-card">
+    <div class="admin-form-heading"><div class="form-heading-icon"><i class="bi bi-box-seam"></i></div><div><span class="admin-section-kicker">INVENTARIO</span><h2>Información del repuesto</h2></div></div>
+    <form method="post" class="admin-form">
+        {% csrf_token %}
+        <div class="admin-form-grid">
+            <div class="admin-field full"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" value="{{ Repuesto.nombre|default:'' }}" required autocomplete="off"></div>
+            <div class="admin-field full"><label for="descripcion">Descripción</label><textarea id="descripcion" name="descripcion" rows="4" required>{{ Repuesto.descripcion|default:'' }}</textarea></div>
+            <div class="admin-field"><label for="precio">Precio</label><input type="number" id="precio" name="precio" value="{{ Repuesto.precio|default:'' }}" required autocomplete="off"></div>
+            <div class="admin-field"><label for="stock">Stock</label><input type="text" id="stock" name="stock" value="{{ Repuesto.stock|default:'' }}" required autocomplete="off"></div>
+        </div>
+        <div class="admin-form-actions"><a href="{% url 'repuesto_lista' %}" class="admin-secondary-button">Cancelar</a><button type="submit" class="admin-gradient-button"><i class="bi bi-check-lg"></i> Guardar repuesto</button></div>
+    </form>
+</section>
+{% endblock %}

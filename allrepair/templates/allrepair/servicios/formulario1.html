@@ -1,0 +1,20 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+{% block title %}{% if Servicio %}Editar servicio{% else %}Nuevo servicio{% endif %} | All-Repair{% endblock %}
+{% block nav_servicios %}active{% endblock %}
+{% block page_heading %}{% if Servicio %}Editar servicio{% else %}Nuevo servicio{% endif %}{% endblock %}
+{% block page_description %}Mantén actualizado el servicios técnicos.{% endblock %}
+
+{% block content %}
+<section class="admin-form-card">
+    <div class="admin-form-heading"><div class="form-heading-icon service"><i class="bi bi-tools"></i></div><div><span class="admin-section-kicker">SERVICIOS TÉCNICOS</span><h2>Información del servicio</h2></div></div>
+    <form method="post" class="admin-form">
+        {% csrf_token %}
+        <div class="admin-form-grid">
+            <div class="admin-field full"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" value="{{ Servicio.nombre|default:'' }}" required autocomplete="off"></div>
+            <div class="admin-field full"><label for="descripcion">Descripción</label><textarea id="descripcion" name="descripcion" rows="4" required>{{ Servicio.descripcion|default:'' }}</textarea></div>
+            <div class="admin-field full"><label for="precio">Precio</label><input type="number" id="precio" name="precio" value="{{ Servicio.precio|default:'' }}" required autocomplete="off"></div>
+        </div>
+        <div class="admin-form-actions"><a href="{% url 'servicio_lista' %}" class="admin-secondary-button">Cancelar</a><button type="submit" class="admin-gradient-button"><i class="bi bi-check-lg"></i> Guardar servicio</button></div>
+    </form>
+</section>
+{% endblock %}

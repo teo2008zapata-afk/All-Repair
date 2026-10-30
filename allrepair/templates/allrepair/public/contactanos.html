@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+        <link href="{% static 'allrepair/css/estilos.css' %}" rel="stylesheet"/>
+        <link href="{% static 'allrepair/img/All-Repair-logo.ico' %}" rel="icon"/>
+        <title>
+            Cont&aacute;ctanos - All-Repair
+        </title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3">
+                <div class="container">
+                    <a class="navbar-brand fw-bold d-flex align-items-center" href="{% url 'inicio' %}">
+                        <img alt="Logo de All-Repair" class="brand-logo" src="{% static 'allrepair/img/All-Repair-Banner.png' %}"/>
+                    </a>
+                    <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'inicio' %}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nosotros' %}">
+                                    Qui&eacute;nes Somos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'catalogo' %}">
+                                    Repuestos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'servicios' %}">
+                                    Servicios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'blog' %}">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'contactanos' %}">
+                                    Cont&aacute;ctanos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container my-5">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-7">
+                    <div class="card card-custom p-4 p-md-5 h-100">
+                        <h1 class="display-6 fw-bold">
+                            Cu&eacute;ntanos qu&eacute; le pasa a tu equipo
+                        </h1>
+                        <p class="text-secondary mb-4">
+                            Completa el formulario y nos pondremos en contacto para orientarte.
+                        </p>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Nombre
+                                    </label>
+                                    <input class="form-control" placeholder="Tu nombre" type="text"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Tel&eacute;fono
+                                    </label>
+                                    <input class="form-control" placeholder="300 000 0000" type="tel"/>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">
+                                        Correo electr&oacute;nico
+                                    </label>
+                                    <input class="form-control" placeholder="correo@ejemplo.com" type="email"/>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">
+                                        Tipo de equipo
+                                    </label>
+                                    <select class="form-select">
+                                        <option>
+                                            Celular
+                                        </option>
+                                        <option>
+                                            Computador port&aacute;til
+                                        </option>
+                                        <option>
+                                            Computador de escritorio
+                                        </option>
+                                        <option>
+                                            Otro dispositivo
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">
+                                        Descripci&oacute;n del problema
+                                    </label>
+                                    <textarea class="form-control" placeholder="Cu&eacute;ntanos qu&eacute; ocurri&oacute;..." rows="5"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-custom px-4" type="button">
+                                        Enviar solicitud
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card card-custom p-4 p-md-5 h-100">
+                        <h2 class="h4 fw-bold mb-4">
+                            Informaci&oacute;n de contacto
+                        </h2>
+                        <!-- Contenedor 1 con la clase contact-item -->
+                        <div class="d-flex gap-3 mb-4 contact-item">
+                            <div class="icon-box flex-shrink-0">
+                                <i class="bi bi-geo-alt service-icon">
+                                </i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Ubicaci&oacute;n
+                                </strong>
+                                <p class="text-secondary mb-0">
+                                    C.C EL CASTILLO LOCAL 111, CRA 51, N 49-61, PARQUE DE COPACABANA.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Contenedor 2 con la clase contact-item -->
+                        <div class="d-flex gap-3 mb-4 contact-item">
+                            <div class="icon-box flex-shrink-0">
+                                <i class="bi bi-clock service-icon">
+                                </i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Horario
+                                </strong>
+                                <p class="text-secondary mb-0">
+                                    Lunes a s&aacute;bado
+                                    <br/>
+                                    8:00 a.m. - 6:00 p.m.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Contenedor 3 con la clase contact-item -->
+                        <div class="d-flex gap-3 contact-item">
+                            <div class="icon-box flex-shrink-0">
+                                <i class="bi bi-envelope service-icon">
+                                </i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Correo
+                                </strong>
+                                <p class="text-secondary mb-0">
+                                    contacto@all-repair.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="navbar-custom text-light pt-5 pb-3 mt-auto">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <img alt="Logo de All-Repair" class="footer-logo" src="{% static 'allrepair/img/All-Repair-logo.png' %}"/>
+                            <div>
+                                <span class="h4 fw-bold mb-0 text-white d-block">
+                                    ALL-REPAIR
+                                </span>
+                                <small class="text-uppercase opacity-75">
+                                    Servicio t&eacute;cnico
+                                </small>
+                            </div>
+                        </div>
+                        <p class="small opacity-75">
+                            Reparamos tus equipos con diagn&oacute;stico transparente, repuestos de calidad y atenci&oacute;n cercana.
+                        </p>
+                        <p class="fw-bold small mb-2 text-white">
+                            S&iacute;guenos
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a aria-label="Facebook" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.facebook.com/" target="_blank">
+                                <i class="bi bi-facebook">
+                                </i>
+                            </a>
+                            <a aria-label="Instagram" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.instagram.com/" target="_blank">
+                                <i class="bi bi-instagram">
+                                </i>
+                            </a>
+                            <a aria-label="TikTok" class="btn btn-outline-light btn-sm rounded-circle" href="https://www.tiktok.com/" target="_blank">
+                                <i class="bi bi-tiktok">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Servicios
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Reparaci&oacute;n de pantalla
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Cambio de bater&iacute;a
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Mantenimiento preventivo
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'servicios' %}">
+                                    &rsaquo; Diagn&oacute;stico t&eacute;cnico
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Navegaci&oacute;n
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'inicio' %}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'nosotros' %}">
+                                    Qui&eacute;nes Somos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'catalogo' %}">
+                                    Repuestos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'blog' %}">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="{% url 'contactanos' %}">
+                                    Cont&aacute;ctanos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5 class="fw-bold mb-3 text-white h6 text-uppercase">
+                            Atenci&oacute;n
+                        </h5>
+                        <ul class="list-unstyled small">
+                            <li class="mb-3">
+                                <i class="bi bi-clock me-2">
+                                </i>
+                                <strong>
+                                    Horario
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    Lun - S&aacute;b &middot; 8:00 a.m. - 6:00 p.m.
+                                </span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-headset me-2">
+                                </i>
+                                <strong>
+                                    Soporte t&eacute;cnico
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    Asesor&iacute;a antes y despu&eacute;s del servicio.
+                                </span>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope me-2">
+                                </i>
+                                <strong>
+                                    Correo
+                                </strong>
+                                <br/>
+                                <span class="opacity-75">
+                                    contacto@all-repair.com
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="border-light opacity-25 my-4"/>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small opacity-75 gap-2">
+                    <p class="mb-0">
+                        &copy; 2026 All-Repair. Todos los derechos reservados.
+                    </p>
+                    <p class="mb-0">
+                        Tecnolog&iacute;a reparada, confianza recuperada.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
+</html>

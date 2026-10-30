@@ -1,0 +1,17 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+{% block title %}Detalle de repuesto | All-Repair{% endblock %}
+{% block nav_repuestos %}active{% endblock %}
+{% block page_heading %}Detalle del repuesto{% endblock %}
+{% block page_description %}Consulta la información registrada del producto.{% endblock %}
+
+{% block content %}
+<section class="admin-detail-card">
+    <div class="admin-detail-header"><div class="form-heading-icon"><i class="bi bi-box-seam"></i></div><div><span class="admin-section-kicker">REPUESTO #{{ Repuesto.id }}</span><h2>{{ Repuesto.nombre }}</h2></div></div>
+    <div class="admin-detail-grid">
+        <div><span>Descripción</span><p>{{ Repuesto.descripcion }}</p></div>
+        <div><span>Precio</span><p class="detail-highlight">${{ Repuesto.precio }}</p></div>
+        <div><span>Stock disponible</span><p class="detail-highlight">{{ Repuesto.stock }}</p></div>
+    </div>
+    <div class="admin-form-actions"><a href="{% url 'repuesto_lista' %}" class="admin-secondary-button">← Volver al listado</a><a href="{% url 'repuesto_editar' Repuesto.id %}" class="admin-gradient-button"><i class="bi bi-pencil"></i> Editar</a></div>
+</section>
+{% endblock %}

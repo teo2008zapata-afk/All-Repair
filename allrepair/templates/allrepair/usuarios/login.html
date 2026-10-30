@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | All-Repair</title>
+    <link rel="icon" href="{% static 'allrepair/img/All-Repair-logo.ico' %}">
+    <link rel="stylesheet" href="{% static 'allrepair/css/estilos.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+
+    <main class="login-wrapper">
+        <section class="login-card">
+
+            <div class="login-header">
+                <div class="login-logo-container">
+                    <img src="{% static 'allrepair/img/All-Repair-logo.png' %}" alt="All-Repair" class="login-logo">
+                </div>
+
+                <span class="login-kicker">PANEL ADMINISTRATIVO</span>
+                <h1>Iniciar sesión</h1>
+                <p>Accede al panel de administración de All-Repair.</p>
+            </div>
+
+            <div class="login-body">
+                {% if error %}
+                    <div class="login-error" role="alert">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <span>{{ error }}</span>
+                    </div>
+                {% endif %}
+
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+
+                    <div class="login-field">
+                        <label for="username">Nombre de Usuario</label>
+                        <div class="login-input-wrapper">
+                            <i class="bi bi-person-fill"></i>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                value="{{ request.POST.username|default:'' }}"
+                                placeholder="Ingresa tu usuario"
+                                required
+                                autocomplete="username"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="login-field">
+                        <label for="password">Contraseña</label>
+                        <div class="login-input-wrapper">
+                            <i class="bi bi-lock-fill"></i>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Ingresa tu contraseña"
+                                required
+                                autocomplete="current-password"
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-submit">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Iniciar sesión
+                    </button>
+                </form>
+            <center>
+                <a href="{% url 'inicio' %}" class="login-home-button">
+                    <i class="bi bi-arrow-left"></i>
+                    Volver al inicio
+                </a>
+            </center>
+            </div>
+
+        </section>
+
+        <p class="login-footer">© All-Repair · Panel exclusivo para administradores</p>
+    </main>
+
+</body>
+</html>

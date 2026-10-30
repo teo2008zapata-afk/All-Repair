@@ -1,0 +1,61 @@
+{% extends 'allrepair/admin/base_admin.html' %}
+
+{% block title %}Dashboard | All-Repair{% endblock %}
+{% block nav_dashboard %}active{% endblock %}
+{% block page_heading %}Dashboard{% endblock %}
+{% block page_description %}Resumen general y accesos rápidos de All-Repair.{% endblock %}
+
+{% block content %}
+<section class="admin-welcome">
+    <div>
+        <span class="admin-badge"><i class="bi bi-stars"></i> Administración</span>
+        <h2>Todo bajo control.</h2>
+        <p>Consulta el estado de tu tienda y administra tus productos y servicios desde este panel.</p>
+    </div>
+    <div class="admin-welcome-icon"><i class="bi bi-grid-1x2-fill"></i></div>
+</section>
+
+<section class="admin-metrics">
+    <article class="admin-metric-card metric-purple">
+        <div class="metric-icon"><i class="bi bi-box-seam"></i></div>
+        <div><span>Repuestos</span><strong>{{ total_repuestos }}</strong><small>registrados</small></div>
+    </article>
+    <article class="admin-metric-card metric-blue">
+        <div class="metric-icon"><i class="bi bi-tools"></i></div>
+        <div><span>Servicios</span><strong>{{ total_servicios }}</strong><small>registrados</small></div>
+    </article>
+</section>
+
+<section class="admin-section-card">
+    <div class="admin-section-heading">
+        <div>
+            <span class="admin-section-kicker">GESTIÓN</span>
+            <h2>Acciones rápidas</h2>
+        </div>
+        <i class="bi bi-lightning-charge-fill"></i>
+    </div>
+
+    <div class="admin-action-grid">
+        <a href="{% url 'repuesto_crear' %}" class="admin-action-card action-purple">
+            <i class="bi bi-plus-circle-fill"></i>
+            <div><strong>Nuevo repuesto</strong><span>Agregar un producto al inventario</span></div>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="{% url 'repuesto_lista' %}" class="admin-action-card action-blue">
+            <i class="bi bi-box-seam-fill"></i>
+            <div><strong>Gestionar repuestos</strong><span>Consultar, editar o eliminar</span></div>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="{% url 'servicio_crear' %}" class="admin-action-card action-orange">
+            <i class="bi bi-plus-circle-fill"></i>
+            <div><strong>Nuevo servicio</strong><span>Agregar un servicio técnico</span></div>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="{% url 'servicio_lista' %}" class="admin-action-card action-purple">
+            <i class="bi bi-tools"></i>
+            <div><strong>Gestionar servicios</strong><span>Consultar, editar o eliminar</span></div>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+</section>
+{% endblock %}
