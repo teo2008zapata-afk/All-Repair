@@ -139,3 +139,5 @@ MAILERS = {
 LOGIN_URL = '/administrador/login/'
 LOGIN_REDIRECT_URL = '/administrador/'
 LOGOUT_REDIRECT_URL = '/administrador/login/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
